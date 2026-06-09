@@ -13,7 +13,14 @@
         <MicaBackdrop />
     </Window.SystemBackdrop>
 
-    <Grid>
+    <Grid x:Name="m_rootGrid" Loaded="RootGrid_Loaded">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
+        <TitleBar Title="WinUI3_Template_2026">
+            <TextBlock x:Name="m_titleBarCenter"/>
+        </TitleBar>
     </Grid>
 </Window>
