@@ -13,11 +13,20 @@
     <EnableMsixTooling>true</EnableMsixTooling>
     <Nullable>enable</Nullable>
     <Configurations>Debug;Release;Debug_Unpackaged;Release_Unpackaged</Configurations>
+	<SingleProject>true</SingleProject>
   </PropertyGroup>
+
   <PropertyGroup Condition="'$(IsPackaged)'=='false'">
 	<WindowsPackageType>None</WindowsPackageType>
 	<SelfContained>true</SelfContained>
-	<WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
+	<PublishSingleFile>true</PublishSingleFile>
+	<WindowsAppSdkSelfContained>true</WindowsAppSdkSelfContained>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(IsPackaged)'=='true'">
+	<AppxPackage>true</AppxPackage>
+	<AppxBundle>Always</AppxBundle>
+	<AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
   </PropertyGroup>
 
   <ItemGroup>
