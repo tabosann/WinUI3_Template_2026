@@ -12,6 +12,12 @@
     <WinUISDKReferences>false</WinUISDKReferences>
     <EnableMsixTooling>true</EnableMsixTooling>
     <Nullable>enable</Nullable>
+    <Configurations>Debug;Release;Debug_Unpackaged;Release_Unpackaged</Configurations>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(IsPackaged)'=='false'">
+	<WindowsPackageType>None</WindowsPackageType>
+	<SelfContained>true</SelfContained>
+	<WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
   </PropertyGroup>
 
   <ItemGroup>
